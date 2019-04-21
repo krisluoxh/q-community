@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>我的</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div *ngIf="notLogin">
+        <ion-card>
+            <ion-card-header text-center>
+                登录问乎，体验更多功能
+            </ion-card-header>
+            <ion-card-content text-center>
+                <ion-button fill="outline" size="small" (click)="showModal()">
+                    登录/注册
+                </ion-button>
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+    <div *ngIf="logined">
+        <ion-card>
+            <ion-card-header text-center>
+                已登录
+            </ion-card-header>
+        </ion-card>
+    </div>
+</ion-content>
