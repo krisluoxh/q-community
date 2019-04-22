@@ -8,7 +8,7 @@ export abstract class BaseUI {
             message: message
         });
 
-        loader.present();
+        await loader.present();
         return loader;
     }
 
@@ -19,7 +19,7 @@ export abstract class BaseUI {
             position: 'bottom'
         });
 
-        toast.present();
+        await toast.present();
         return toast;
     }
 }

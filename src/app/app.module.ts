@@ -11,15 +11,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonService } from './services/common/common.service';
 import { IonicStorageModule } from '@ionic/storage';
+import { MODULES } from './app.imports';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule,
+  imports: [
+    BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
-    AppRoutingModule],
+    AppRoutingModule,
+    MODULES
+  ],
   providers: [
     StatusBar,
     SplashScreen,

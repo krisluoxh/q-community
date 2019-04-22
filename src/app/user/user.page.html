@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="返回"></ion-back-button>
+        </ion-buttons>
+        <ion-title>个人中心</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list class="list-content">
+        <ion-item detail (click)="goUserPage()">
+            <ion-avatar slot="start">
+                <ion-img [src]="headFace"></ion-img>
+            </ion-avatar>
+            <ion-note slot="end">修改头像</ion-note>
+        </ion-item>
+    </ion-list>
+
+    <ion-list class="list-content">
+        <ion-item>
+            <ion-label>用户昵称</ion-label>
+            <ion-input type="text" [(ngModel)]="nickName"></ion-input>
+        </ion-item>
+    </ion-list>
+    <div>
+        <ion-button color="primary" expand="block" (click)="updateUserName()">保存</ion-button>
+    </div>
+    <div>
+        <ion-button color="danger" expand="block" (click)="logout()">注销</ion-button>
+    </div>
+</ion-content>

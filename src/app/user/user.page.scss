@@ -1,0 +1,11 @@
+ion-button {
+    margin: 10px 20px;
+}
+
+.list-content {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    &:last-child {
+        margin-bottom: 20px;
+    }
+}

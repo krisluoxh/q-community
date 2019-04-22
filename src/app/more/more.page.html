@@ -19,10 +19,31 @@
     </div>
 
     <div *ngIf="logined">
-        <ion-card>
+        <!-- <ion-card>
             <ion-card-header text-center>
                 已登录
             </ion-card-header>
-        </ion-card>
+        </ion-card> -->
+        <ion-list class="list-content">
+            <ion-item detail (click)="goUserPage()">
+                <ion-avatar slot="start">
+                    <!-- <img src="{{headface}}" /> -->
+                    <ion-img [src]="headface"></ion-img>
+                </ion-avatar>
+                <!-- <ion-thumbnail slot="start">
+                    <ion-img [src]="item.src"></ion-img>
+                </ion-thumbnail> -->
+                <!-- <div>
+                    <ion-chip>
+                        <ion-icon name="heart" class="heart" color="primary"></ion-icon>
+                        <ion-label>问乎颜值：324</ion-label>
+                        <ion-icon name="arrow-forward"></ion-icon>
+                    </ion-chip>
+                </div> -->
+
+                <ion-label>{{userInfo.UserNickName}}</ion-label>
+                <ion-note slot="end">个人主页</ion-note>
+            </ion-item>
+        </ion-list>
     </div>
 </ion-content>

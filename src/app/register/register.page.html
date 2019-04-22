@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="返回"></ion-back-button>
+        </ion-buttons>
+        <ion-title>用户注册</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label position="stacked">手机号码</ion-label>
+            <ion-input type="text" [(ngModel)]="mobile"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="stacked">用户昵称</ion-label>
+            <ion-input type="text" [(ngModel)]="userName"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="stacked">密码</ion-label>
+            <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="stacked">确认密码</ion-label>
+            <ion-input type="password" [(ngModel)]="confirmPassword"></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <div padding>
+        <ion-button color="primary" expand="block" (click)="register()">注册</ion-button>
+    </div>
+    <div padding text-center>
+        <ion-button color="primary" fill="outline" size="small" (click)="gotoLoginPage()">已有账号？登录</ion-button>
+    </div>
+</ion-content>

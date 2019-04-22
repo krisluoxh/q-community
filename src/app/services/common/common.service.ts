@@ -14,7 +14,7 @@ export class CommonService {
 
   private apiUrlRegister = 'https://imoocqa.gugujiankong.com/api/account/register';
   private apiUrlLogin = 'https://imoocqa.gugujiankong.com/api/account/login';
-  private apiUrlUsrInfo = 'https://imoocqa.gugujiankong.com/api/account/userinfo';
+  private apiUrlUserInfo = 'https://imoocqa.gugujiankong.com/api/account/userinfo';
   private apiUrlUpdateNickName = 'https://imoocqa.gugujiankong.com/api/account/updatenickname';
 
   private apiUrlQuestionSave = 'https://imoocqa.gugujiankong.com/api/question/save';
@@ -22,12 +22,20 @@ export class CommonService {
   private apiUrlGetQuestion = 'https://imoocqa.gugujiankong.com/api/question/get';
   private apiUrlAnswer = 'https://imoocqa.gugujiankong.com/api/question/answer';
 
-  login(mobile, password): Observable<string[]> {
+  login(mobile: string, password: string): Observable<string[]> {
     return this.getUrlReturn(this.apiUrlLogin + '?mobile=' + mobile + '&password=' + password);
   }
 
-  regster(mobile, userName, password): Observable<string[]> {
+  regster(mobile: string, userName: string, password: string): Observable<string[]> {
     return this.getUrlReturn(this.apiUrlRegister + '?mobile=' + mobile + '&nickname=' + userName + '&password=' + password);
+  }
+
+  getUserInfo(userId: string): Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlUserInfo + '?userid=' + userId);
+  }
+
+  updateUserInfo(userId: string, userName: string): Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlUpdateNickName + '?userid=' + userId + '&nickname=' + userName);
   }
 
   private getUrlReturn(url: string): Observable<string[]> {
@@ -38,11 +46,7 @@ export class CommonService {
   }
 
   private extractData(res: Response) {
-    const body = res.json();
-    console.log(res);
-    console.log(body);
-
-    return JSON.parse('') || {};
+    return JSON.parse(<any>res) || {};
   }
 
   private handleError(error: Response | any) {
