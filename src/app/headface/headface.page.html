@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="返回"></ion-back-button>
+        </ion-buttons>
+        <ion-title>修改头像</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-img [src]="pathForImage(lastImage)" style="width: 100%" [hidden]="lastImage === null"></ion-img>
+    <h3 [hidden]="lastImage !== null">请选择图片</h3>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-buttons>
+            <ion-button slot="left" (click)="selectPicture()">
+                <ion-icon name="camera">选择...</ion-icon>
+            </ion-button>
+            <ion-button slot="left" (click)="uploadImg()" [disabled]="lastImage === null">
+                <ion-icon name="cloud-upload">上传</ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>

@@ -1,5 +1,7 @@
 {
   "name": "q-community",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -12,6 +12,11 @@ import { AppComponent } from './app.component';
 import { CommonService } from './services/common/common.service';
 import { IonicStorageModule } from '@ionic/storage';
 import { MODULES } from './app.imports';
+import { FileTransfer } from '@ionic-native/file-transfer/ngx';
+import { File } from '@ionic-native/file/ngx';
+import { FilePath } from '@ionic-native/file-path/ngx';
+import { Camera, } from '@ionic-native/camera/ngx';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +33,12 @@ import { MODULES } from './app.imports';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    CommonService
+    CommonService,
+    Camera,
+    File,
+    FilePath,
+    FileTransfer,
+    WebView
   ],
   bootstrap: [AppComponent]
 })

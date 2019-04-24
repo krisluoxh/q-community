@@ -66,4 +66,8 @@ export class UserPage extends BaseUI implements OnInit {
     this.storage.remove('UserId');
     this.navCtrl.navigateRoot('/tabs/more');
   }
+
+  goHeadface() {
+    this.navCtrl.navigateForward('/headface');
+  }
 }
