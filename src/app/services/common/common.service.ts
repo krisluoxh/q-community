@@ -38,6 +38,10 @@ export class CommonService {
     return this.getUrlReturn(this.apiUrlUpdateNickName + '?userid=' + userId + '&nickname=' + userName);
   }
 
+  saveQuestion(userId: string, title: string, content: string): Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlQuestionSave + '?userid=' + userId + '&title=' + title + '&content=' + content);
+  }
+
   private getUrlReturn(url: string): Observable<string[]> {
     return this.http.get(url).pipe(
       map(this.extractData),

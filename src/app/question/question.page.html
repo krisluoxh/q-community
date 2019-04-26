@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>提问</ion-title>
+        <ion-buttons slot="start">
+            <ion-button (click)="dismiss()">
+                <ion-icon name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-text>发布问题</ion-text>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label position="stacked">问题标题</ion-label>
+            <ion-input type="text" placeholder="输入问题并以问号结束" [(ngModel)]="title"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked">问题内容</ion-label>
+            <ion-textarea type="text" placeholder="对问题补充说明，可以更快获得解答（选填）"></ion-textarea>
+        </ion-item>
+    </ion-list>
+    <div>
+        <ion-button color="primary" expand="block" (click)="saveQuestion()">提问</ion-button>
+    </div>
+</ion-content>

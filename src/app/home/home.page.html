@@ -1,9 +1,33 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>首页</ion-title>
+        <ion-searchbar placeholder="搜索"></ion-searchbar>
+        <ion-icon name="text" class="header-icon" (click)="gotoQuestion()"></ion-icon>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <div class="float-menu">
+        <ion-grid>
+            <ion-row>
+                <ion-col size="4" class="ion-text-center">
+                    <div (click)="gotoQuestion()">
+                        <ion-icon name="create"></ion-icon>
+                        <ion-text>提问</ion-text>
+                    </div>
+                </ion-col>
+                <ion-col size="4" class="ion-text-center">
+                    <div (click)="gotoQuestion()">
+                        <ion-icon name="albums"></ion-icon>
+                        <ion-text>回答</ion-text>
+                    </div>
+                </ion-col>
+                <ion-col size="4" class="ion-text-center">
+                    <div (click)="gotoQuestion()">
+                        <ion-icon name="share-alt"></ion-icon>
+                        <ion-text>分享</ion-text>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
 </ion-content>

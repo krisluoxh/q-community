@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'user', loadChildren: './user/user.module#UserPageModule' },
   { path: 'headface', loadChildren: './headface/headface.module#HeadfacePageModule' },
+  { path: 'question', loadChildren: './question/question.module#QuestionPageModule' },
 
 ];
 @NgModule({
